@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ResticClient.Console": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
