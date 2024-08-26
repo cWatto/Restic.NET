@@ -56,7 +56,7 @@ namespace Restic
         public bool Initialize()
         {
             ThrowIfNoPassword();
-            return _communicator.Execute<bool>(new Commands.Init(this), this);
+            return _communicator.ExecuteAsync<bool>(new Commands.Init(this), this).Result;
         }
 
         /// <summary>

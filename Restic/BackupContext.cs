@@ -36,9 +36,9 @@ namespace Restic
         }
         #endregion
 
-        public BackupResult Execute()
+        public async Task<BackupResult> Execute()
         {
-            return _communicator.Execute<BackupResult>(new Commands.Backup(_repository, this), _repository);
+            return await _communicator.ExecuteAsync<BackupResult>(new Commands.Backup(_repository, this), _repository);
         }
 
         private void AddParameter(string key, string value)

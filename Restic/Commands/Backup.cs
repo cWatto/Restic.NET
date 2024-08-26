@@ -34,10 +34,10 @@ namespace Restic.Commands
             return commandBuilder.ToString();
         }
 
-        public BackupResult ParseResult(Process process)
+        public async Task<BackupResult> ParseResult(Process process)
         {
             bool success = process.ExitCode == 0;
-            string message = success ? process.StandardOutput.ReadToEnd() : process.StandardError.ReadToEnd();
+            string message = success ? await process.StandardOutput.ReadToEndAsync() : await process.StandardError.ReadToEndAsync();
             return new BackupResult(success, message);
         }
 

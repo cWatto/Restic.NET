@@ -11,9 +11,9 @@ namespace Restic.Commands
             return "version";
         }
 
-        public string ParseResult(Process process)
+        public async Task<string> ParseResult(Process process)
         {
-            return process.StandardOutput.ReadToEnd();
+            return await process.StandardOutput.ReadToEndAsync();
         }
 
         

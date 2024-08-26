@@ -19,7 +19,7 @@ namespace Restic.Commands
             return string.Format($"init -r {_repository.RepositoryPath}");
         }
 
-        public bool ParseResult(Process process)
+        public async Task<bool> ParseResult(Process process)
         {
             if (process.ExitCode == 0)
                 return true;

@@ -7,9 +7,9 @@
         }
         public ResticCommunicator Communicator { get; set; }
         
-        public string GetVersion()
+        public async Task<string> GetVersion()
         {
-            return Communicator.Execute<string>(new Commands.GetVersion(), null);
+            return await Communicator.ExecuteAsync<string>(new Commands.GetVersion());
         }
     }
 }

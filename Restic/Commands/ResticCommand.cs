@@ -11,6 +11,6 @@ namespace Restic.Commands
     {
         bool IsJsonResponse { get; }
         string BuildCommandArgs(ResticClient clientContext);
-        public T ParseResult(Process process);
+        public Task<T> ParseResult(Process process);
     }
 }
